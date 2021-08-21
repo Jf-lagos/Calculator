@@ -14,7 +14,7 @@
     grid-template-columns: repeat(4,1fr);
     border:0;
 }
-.calc-numbers{
+#calc-numbers{
     font-family: 'Space Mono', serif;
     background: black;
     color: white;
