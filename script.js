@@ -35,7 +35,6 @@ operators.forEach(op => {
                 case "+":
                     console.log(parseInt(firstNum) + parseInt(secondNum));
                     break;
-
                 case "-":
                     console.log(parseInt(firstNum) - parseInt(secondNum));
                     break;
