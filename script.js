@@ -4,6 +4,8 @@ const operators = document.querySelectorAll(".operator");
 const clear = document.querySelector(".clear");
 let displayValue = "0";
 
+const display = document.getElementById("calc-numbers")
+
 let firstNum = "";
 let secondNum = "";
 let operator = "";
@@ -13,9 +15,11 @@ numbers.forEach(number => {
         if (operator === "") { // Read first number if no operator set yet
             firstNum += e.target.innerText;
             console.log(firstNum)
+            display.innerHTML = firstNum
         } else { // Read second number
             secondNum += e.target.innerText;
             console.log(secondNum)
+            display.innerHTML = secondNum
         }
     });
 });
@@ -24,25 +28,24 @@ operators.forEach(op => {
     op.addEventListener("click", e => {
         if (e.target.innerText !== "=") { // If the operator is not equals
             operator = e.target.innerText;
-
+            display.innerHTML = operator
             console.log(firstNum); // Print the first number
             console.log(operator); // Print the operator
 
         } else { // If equals button clicked
-            console.log(secondNum); // Print 2nd number
 
             switch (operator) { // Calculate and print output
                 case "+":
-                    console.log(parseInt(firstNum) + parseInt(secondNum));
+                    display.innerHTML = (parseInt(firstNum) + parseInt(secondNum));
                     break;
                 case "-":
-                    console.log(parseInt(firstNum) - parseInt(secondNum));
+                    display.innerHTML = (parseInt(firstNum) - parseInt(secondNum));
                     break;
                 case "x":
-                    console.log(parseInt(firstNum) * parseInt(secondNum));
+                    display.innerHTML = (parseInt(firstNum) * parseInt(secondNum));
                     break;
                 case "/":
-                    console.log(parseInt(firstNum) / parseInt(secondNum));
+                    display.innerHTML = (parseInt(firstNum) / parseInt(secondNum));
                     break;
                 default:
                     break;
@@ -51,14 +54,6 @@ operators.forEach(op => {
 
     });
 });
-
-//Math function 
-let add = (a, b) => a + b 
-let substract = (a, b) => a - b 
-let multiply = (a, b) => a * b
-let divide = (a, b) => a / b
-
-
 
 /* 
 
